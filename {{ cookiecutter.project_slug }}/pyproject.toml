@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = ""
+authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+include = ["src/*"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+tomli = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.0"
+pytest-xdist = "^3.0.2"
+pre-commit = "^2.20.0"
+mkdocs = "^1.4.2"
+mkdocs-material = "^8.5.11"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# [[tool.poetry.source]]
+# name = "tsinghua"
+# url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+# priority = "default"
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "http://mirrors.aliyun.com/pypi/simple/"
+priority = "default"
+
+[tool.poetry.scripts]
+tt = "{{cookiecutter.project_slug}}.__main__:cli"
+
+# -- FILE: pytest.ini (or tox.ini)
+[tool.pytest.ini_options]
+# -- recommended but optional:
+python_files = "tests.py test_*.py *_tests.py"
+addopts = "-n3"
