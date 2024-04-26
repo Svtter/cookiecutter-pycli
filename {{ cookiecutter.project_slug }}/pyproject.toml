@@ -32,7 +32,7 @@ url = "http://mirrors.aliyun.com/pypi/simple/"
 priority = "default"
 
 [tool.poetry.scripts]
-tt = "{{cookiecutter.project_slug}}.__main__:cli"
+{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.__main__:cli"
 
 # -- FILE: pytest.ini (or tox.ini)
 [tool.pytest.ini_options]

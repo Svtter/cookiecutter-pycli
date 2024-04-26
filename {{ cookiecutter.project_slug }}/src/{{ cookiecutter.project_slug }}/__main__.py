@@ -1,7 +1,7 @@
 import toml
 import click
 from pathlib import Path
-
+from {{cookiecutter.project_slug}} import __version__
 
 @click.group()
 def cli():
