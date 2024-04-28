@@ -1,3 +1,4 @@
+import tomli
 import click
 from pathlib import Path
 from {{cookiecutter.project_slug}} import __version__
@@ -21,11 +22,11 @@ def write(version):
         f.write(f'__version__ = "{version}"')
 
     p = Path("./pyproject.toml")
-    res = toml.load(p)
+    res = tomli.load(p)
     res["tool"]["poetry"]["version"] = version
     # write back
     with open(p, "w") as f:
-        toml.dump(res, f)
+        tomli.dump(res, f)
 
 
 enabled_cmd = [
